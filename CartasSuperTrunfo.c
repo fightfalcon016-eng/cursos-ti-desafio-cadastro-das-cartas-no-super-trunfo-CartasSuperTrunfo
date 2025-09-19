@@ -11,7 +11,7 @@ int main() {
     char ESTADO [20] = "SERGIPE";
     char CODIGO_ESTADO [20] = "A01";
     char NOME_CIDADE [20] = "ARACAJU";
-    int POPULAÇÃO = 630932;
+    unsigned long int POPULAÇÃO = 630932;
     float ÁREA_KM² = 181.0;
     float PIB = 18.4;
     int NÚMERO_PONTOS_TURÍSTICOS = 32;
@@ -22,7 +22,7 @@ int main() {
     char ESTADO2 [20] = "ALAGOAS";
     char CODIGO_ESTADO2 [20] = "A02";
     char NOME_CIDADE2 [20] = "MACEIÓ";
-    int POPULAÇÃO2 = 994952;
+    unsigned long int POPULAÇÃO2 = 994952;
     float ÁREA_KM²2 = 509.6;
     float PIB2 = 27.48;
     int NÚMERO_PONTOS_TURÍSTICOS2 = 40;
@@ -33,7 +33,7 @@ int main() {
     printf("ESTADO: %s\n", ESTADO);
     printf("CÓDIGO DO ESTADO: %s\n", CODIGO_ESTADO);
     printf("NOME DA CIDADE: %s\n", NOME_CIDADE);
-    printf("POPULAÇÃO: %d\n", POPULAÇÃO);
+    printf("POPULAÇÃO: %lu\n", POPULAÇÃO);
     printf("ÁREA EM KM²: %.1f\n", ÁREA_KM²);
     printf("PIB: %.2f BILHÕES\n", PIB);
     printf("NÚMERO DE PONTOS TURÍSTICOS: %d\n", NÚMERO_PONTOS_TURÍSTICOS);
@@ -46,12 +46,34 @@ int main() {
     printf("ESTADO: %s\n", ESTADO2);
     printf("CÓDIGO DO ESTADO: %s\n", CODIGO_ESTADO2);
     printf("NOME DA CIDADE: %s\n", NOME_CIDADE2);
-    printf("POPULAÇÃO: %d\n", POPULAÇÃO2);
+    printf("POPULAÇÃO: %lu\n", POPULAÇÃO2);
     printf("ÁREA EM KM²: %.1f\n", ÁREA_KM²2);
     printf("PIB: %.2f BILHÕES\n", PIB2);
     printf("NÚMERO DE PONTOS TURÍSTICOS: %d\n", NÚMERO_PONTOS_TURÍSTICOS2);
     printf("DESNSIDADE POPULACIONAL: %.1f\n", DENSIDADE_POPULACIONAL2);
     printf("PIB PER CAPITA: %.1f\n", PIB_PER_CAPITA2);
+
+    printf(" \n");
+
+    DENSIDADE_POPULACIONAL = 1/DENSIDADE_POPULACIONAL;
+    float SUPER_PODER = POPULAÇÃO + ÁREA_KM² + PIB + NÚMERO_PONTOS_TURÍSTICOS + DENSIDADE_POPULACIONAL + PIB_PER_CAPITA;
+    DENSIDADE_POPULACIONAL2 = 1/DENSIDADE_POPULACIONAL2;
+    float SUPER_PODER2 = POPULAÇÃO2 + ÁREA_KM²2 + PIB2 + NÚMERO_PONTOS_TURÍSTICOS2 + DENSIDADE_POPULACIONAL2 + PIB_PER_CAPITA2;
+
+    printf("O SUPER PODER CARTA 1: %.1f\n", SUPER_PODER);
+    printf("O SUPER PODER CARTA 2: %.1f\n", SUPER_PODER2);
+
+    printf(" \n");
+
+    //Aqui a comparação das cartas
+
+    printf("População1 é maior que População2? %d\n", POPULAÇÃO > POPULAÇÃO2);
+    printf("Área km²1 é maior que Área km²2? %d\n", ÁREA_KM² > ÁREA_KM²2);
+    printf("Pib1 é maior que Pib? %d\n", PIB > PIB2);
+    printf("Número de Pontos Turísticos1 é maior que Número de Pontos Turísticos2? %d\n", NÚMERO_PONTOS_TURÍSTICOS > NÚMERO_PONTOS_TURÍSTICOS2);
+    printf("Densidade Populacional1 é maior que Densidade Populacional2? %d\n", DENSIDADE_POPULACIONAL > DENSIDADE_POPULACIONAL2);
+    printf("Pib per Capita1 é maior que Pib per Capita2? %d\n", PIB_PER_CAPITA > PIB_PER_CAPITA2);
+    printf("Super Poder1 é maior que Super Poder2? %d\n", SUPER_PODER > SUPER_PODER2);
 
     return 0;
 }
