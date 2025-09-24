@@ -17,6 +17,8 @@ int main() {
     int NÚMERO_PONTOS_TURÍSTICOS = 32;
     float DENSIDADE_POPULACIONAL = POPULAÇÃO/ÁREA_KM²;
     float PIB_PER_CAPITA = PIB/ (int) POPULAÇÃO*1000000000;
+    DENSIDADE_POPULACIONAL = 1/DENSIDADE_POPULACIONAL;
+    float SUPER_PODER = POPULAÇÃO + ÁREA_KM² + PIB + NÚMERO_PONTOS_TURÍSTICOS + DENSIDADE_POPULACIONAL + PIB_PER_CAPITA;
 
     //CARTA 2
     char ESTADO2 [20] = "ALAGOAS";
@@ -28,6 +30,8 @@ int main() {
     int NÚMERO_PONTOS_TURÍSTICOS2 = 40;
     float DENSIDADE_POPULACIONAL2 = POPULAÇÃO2/ÁREA_KM²2;
     float PIB_PER_CAPITA2 = PIB2/ (int) POPULAÇÃO2*1000000000;
+    DENSIDADE_POPULACIONAL2 = 1/DENSIDADE_POPULACIONAL2;
+    float SUPER_PODER2 = POPULAÇÃO2 + ÁREA_KM²2 + PIB2 + NÚMERO_PONTOS_TURÍSTICOS2 + DENSIDADE_POPULACIONAL2 + PIB_PER_CAPITA2;
 
     //IMPRESSÃO DA CARTA 1
     printf("ESTADO: %s\n", ESTADO);
@@ -39,6 +43,7 @@ int main() {
     printf("NÚMERO DE PONTOS TURÍSTICOS: %d\n", NÚMERO_PONTOS_TURÍSTICOS);
     printf("DESNSIDADE POPULACIONAL: %.1f\n", DENSIDADE_POPULACIONAL);
     printf("PIB PER CAPITA: %.1f\n", PIB_PER_CAPITA);
+    printf("O SUPER PODER CARTA 1: %.1f\n", SUPER_PODER);
 
     printf(" \n"); //Linha para separar as informações das duas cartas
 
@@ -52,28 +57,18 @@ int main() {
     printf("NÚMERO DE PONTOS TURÍSTICOS: %d\n", NÚMERO_PONTOS_TURÍSTICOS2);
     printf("DESNSIDADE POPULACIONAL: %.1f\n", DENSIDADE_POPULACIONAL2);
     printf("PIB PER CAPITA: %.1f\n", PIB_PER_CAPITA2);
-
-    printf(" \n");
-
-    DENSIDADE_POPULACIONAL = 1/DENSIDADE_POPULACIONAL;
-    float SUPER_PODER = POPULAÇÃO + ÁREA_KM² + PIB + NÚMERO_PONTOS_TURÍSTICOS + DENSIDADE_POPULACIONAL + PIB_PER_CAPITA;
-    DENSIDADE_POPULACIONAL2 = 1/DENSIDADE_POPULACIONAL2;
-    float SUPER_PODER2 = POPULAÇÃO2 + ÁREA_KM²2 + PIB2 + NÚMERO_PONTOS_TURÍSTICOS2 + DENSIDADE_POPULACIONAL2 + PIB_PER_CAPITA2;
-
-    printf("O SUPER PODER CARTA 1: %.1f\n", SUPER_PODER);
     printf("O SUPER PODER CARTA 2: %.1f\n", SUPER_PODER2);
 
     printf(" \n");
 
     //Aqui a comparação das cartas
 
-    printf("População1 é maior que População2? %d\n", POPULAÇÃO > POPULAÇÃO2);
-    printf("Área km²1 é maior que Área km²2? %d\n", ÁREA_KM² > ÁREA_KM²2);
-    printf("Pib1 é maior que Pib? %d\n", PIB > PIB2);
-    printf("Número de Pontos Turísticos1 é maior que Número de Pontos Turísticos2? %d\n", NÚMERO_PONTOS_TURÍSTICOS > NÚMERO_PONTOS_TURÍSTICOS2);
-    printf("Densidade Populacional1 é maior que Densidade Populacional2? %d\n", DENSIDADE_POPULACIONAL > DENSIDADE_POPULACIONAL2);
-    printf("Pib per Capita1 é maior que Pib per Capita2? %d\n", PIB_PER_CAPITA > PIB_PER_CAPITA2);
-    printf("Super Poder1 é maior que Super Poder2? %d\n", SUPER_PODER > SUPER_PODER2);
+if (POPULAÇÃO > POPULAÇÃO2) {
+    printf("Atributo População: Carta 1 Venceu\n");
+} else{
+    printf("Atributo População: Carta 2 Venceu\n");
+}
+
 
     return 0;
 }
